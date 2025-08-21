@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TrailWalkers Onam Celebration - Melbourne</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --primary-bg: #FFFFFF;
+            --secondary-bg: #F8F8F8;
+            --text-color: #333333;
+            --heading-color: #1A1A1A;
+            --accent-gold: #FFD700;
+            --accent-green: #228B22;
+            --accent-red: #DC143C;
+            --border-color: #E0E0E0;
+            --shadow-light: rgba(0, 0, 0, 0.05);
+            --font-inter: 'Inter', sans-serif;
+            --font-open-sans: 'Open Sans', sans-serif;
+        }
+        body {
+            font-family: var(--font-open-sans);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-bg);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: var(--primary-bg);
+            padding: 30px 0;
+            box-shadow: 0 2px 10px var(--shadow-light);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header h1 {
+            font-family: var(--font-inter);
+            font-size: 2.8em;
+            color: var(--heading-color);
+            margin: 0;
+            padding-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        header h1 .trailwalkers {
+            color: var(--accent-green);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            animation: fadeInScale 1s ease-out forwards;
+        }
+        header h1 .trailwalkers::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 4px;
+            background-color: var(--accent-gold);
+            border-radius: 2px;
+            opacity: 0;
+            animation: slideInUnderline 1s ease-out 0.5s forwards;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 10px;
+            font-family: var(--font-inter);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.8s forwards;
+        }
+        /* Hero section with attractive graphics inspired by Pookkalam */
+        .hero-section {
+            width: 100%;
+            height: 450px;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.7), transparent 70%),
+                radial-gradient(circle at 80% 20%, rgba(255, 99, 71, 0.7), transparent 70%),
+                radial-gradient(circle at 50% 50%, rgba(50, 205, 50, 0.6), transparent 60%),
+                linear-gradient(135deg, #FF6347, #FFD700, #32CD32, #8A2BE2);
+            background-size: 200% 200%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: pookkalamBackground 15s ease infinite alternate;
+        }
+        @keyframes pookkalamBackground {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+        .hero-content {
+            z-index: 1;
+            padding: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+        .hero-content h2 {
+            font-family: var(--font-inter);
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            color: white;
+            border-bottom: none;
+            padding-bottom: 0;
+            position: relative;
+            animation: fadeInDown 1s ease-out forwards;
+        }
+        .hero-content h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+            width: 80px;
+            height: 5px;
+            background-color: var(--accent-gold);
+            border-radius: 3px;
+            animation: slideInUnderline 1s ease-out 0.8s forwards;
+        }
+        .hero-content p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #F0F0F0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: var(--primary-bg);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px var(--shadow-light);
+            flex-wrap: wrap;
+        }
+        .tab-button {
+            background-color: transparent;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            font-family: var(--font-inter);
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            flex-grow: 1;
+            text-align: center;
+        }
+        .tab-button:hover {
+            color: var(--accent-green);
+            background-color: var(--secondary-bg);
+        }
+        .tab-button.active {
+            color: var(--accent-green);
+            border-bottom: 3px solid var(--accent-gold);
+        }
+        .tab-button::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent-green);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        .tab-button:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: var(--primary-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            animation: fadeIn 0.5s ease-out forwards;
+            min-height: 300px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-family: var(--font-inter);
+            font-size: 2em;
+            color: var(--heading-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 50px;
+            height: 4px;
+            background-color: var(--accent-gold);
+            border-radius: 2px;
+        }
+        h3 {
+            font-family: var(--font-inter);
+            font-size: 1.5em;
+            color: var(--heading-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: var(--secondary-bg);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 5px solid var(--accent-green);
+            box-shadow: 0 1px 3px var(--shadow-light);
+            transition: transform 0.2s ease;
+        }
+        ul li:hover {
+            transform: translateX(5px);
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .info-card {
+            background-color: var(--secondary-bg);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px var(--shadow-light);
+            border-top: 5px solid var(--accent-red);
+        }
+        .info-card h3 {
+            color: var(--heading-color);
+            margin-top: 0;
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 10px;
+        }
+        .info-card p {
+            margin-bottom: 0;
+        }
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px var(--shadow-light);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .directions-link {
+            display: inline-block;
+            background-color: var(--accent-green);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .directions-link:hover {
+            background-color: #3a7d44;
+            transform: translateY(-2px);
+        }
+        .sadya-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow-x: auto;
+            display: block;
+        }
+        .sadya-table th, .sadya-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            text-align: left;
+        }
+        .sadya-table th {
+            background-color: var(--accent-gold);
+            color: var(--heading-color);
+            font-family: var(--font-inter);
+            font-weight: 700;
+            position: sticky;
+            top: 0;
+        }
+        .sadya-table tr:nth-child(even) {
+            background-color: var(--secondary-bg);
+        }
+        .sadya-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        footer {
+            background-color: var(--heading-color);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: auto;
+            font-size: 0.9em;
+            font-family: var(--font-inter);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideInUnderline {
+            from { width: 0; opacity: 0; }
+            to { width: 80%; opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            .hero-section {
+                height: 350px;
+            }
+            .hero-content h2 {
+                font-size: 2.5em;
+            }
+            .hero-content p {
+                font-size: 1.2em;
+            }
+            .tab-button {
+                flex-basis: 100%;
+                font-size: 1em;
+                padding: 12px 15px;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .tab-button:last-child {
+                border-bottom: none;
+            }
+            .tabs {
+                flex-direction: column;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .sadya-table th, .sadya-table td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            .hero-section {
+                height: 300px;
+            }
+            .hero-content h2 {
+                font-size: 1.8em;
+            }
+            .hero-content p {
+                font-size: 1em;
+            }
+            .tab-button {
+                font-size: 0.9em;
+                padding: 10px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><span class="trailwalkers">TrailWalkers</span> Onam Celebration</h1>
+            <p>Melbourne's most vibrant festival for our walking community!</p>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h2>Welcome to Onam 2025!</h2>
+            <p>A celebration of culture, harvest, and togetherness for the TrailWalkers family.</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <nav class="tabs">
+            <button class="tab-button active" data-tab="date-venue">Date and Venue</button>
+            <button class="tab-button" data-tab="programs">Programs</button>
+            <button class="tab-button" data-tab="sadya">Sadya Items</button>
+        </nav>
+
+        <div id="date-venue" class="tab-content active">
+            <section>
+                <h2>Event Details</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Date & Time</h3>
+                        <p><strong>Friday, 20th September 2025</strong></p>
+                        <p>From 10:00 AM onwards</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Location</h3>
+                        <p><strong>Strathaird Family & Community Centre</strong></p>
+                        <p>106 Strathaird Drive, Narre Warren South, VIC 3805</p>
+                    </div>
+                </div>
+
+                <h3>Getting There</h3>
+                <p>We're thrilled to host our Onam celebration at the spacious Strathaird Family & Community Centre. Below you'll find everything you need to navigate your way to the festivities!</p>
+
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3140.237834789073!2d145.2950587762691!3d-38.03056154868074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad617e4719b6e83%3A0xf0579e56314f170!2sStrathaird%20Family%20%26%20Community%20Centre!5e0!3m2!1sen!2sau!4v1701550000000!5m2!1sen!2sau" 
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Strathaird+Family+%26+Community+Centre,+106+Strathaird+Drive,+Narre+Warren+South,+VIC+3805" target="_blank" class="directions-link">Get Directions via Google Maps</a>
+
+                <h3>Travel Information</h3>
+                <p><strong>Public Transport:</strong> The centre is accessible via bus routes from Narre Warren and Berwick train stations. Please check PTV for the most up-to-date routes and timetables.</p>
+                <p><strong>Parking:</strong> Ample free parking is available on-site at the Strathaird Family & Community Centre car park.</p>
+            </section>
+        </div>
+
+        <div id="programs" class="tab-content">
+            <section>
+                <h2>Onam Celebration Programs</h2>
+                <ul>
+                    <li><strong>10:00 AM - Welcome & Pookkalam Laying:</strong> Join us as we collaboratively create a vibrant Onam Pookkalam (floral carpet), symbolising welcome and prosperity.</li>
+                    <li><strong>11:00 AM - Mahabali's Grand Entry:</strong> Witness the traditional arrival of King Mahabali, a highlight of Onam festivities.</li>
+                    <li><strong>11:30 AM - Traditional Onam Games:</strong> Participate in lively games like Tug-of-War (Vadamvali) and other fun activities for all ages.</li>
+                    <li><strong>1:00 PM - Onasadya (Grand Feast):</strong> Indulge in the sumptuous traditional Onam Sadya, a vegetarian feast served on banana leaves. (Please refer to the 'Sadya Items' tab for details on contributions).</li>
+                    <li><strong>2:30 PM - Cultural Performances:</strong> Enjoy captivating performances showcasing Kerala's rich art forms, including traditional dances and music.</li>
+                    <li><strong>4:00 PM - Farewell & Networking:</strong> A chance to mingle, share stories, and bid farewell until next time.</li>
+                </ul>
+                <p><em>(Program schedule is subject to minor changes.)</em></p>
+            </section>
+        </div>
+
+        <div id="sadya" class="tab-content">
+            <section>
+                <h2>Sadya Items & Owners</h2>
+                <p>The Onasadya is the heart of our celebration! It's a collaborative feast, and we appreciate everyone contributing their delicious dishes. Please find the list of items and who is bringing them below. If you're contributing, please ensure your name is listed!</p>
+                <table class="sadya-table">
+                    <thead>
+                        <tr>
+                            <th>Dish Name</th>
+                            <th>Description</th>
+                            <th>Owner / Contributor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Sambar</td><td>A lentil and vegetable stew, a staple of Sadya.</td><td>[Name 1]</td></tr>
+                        <tr><td>Aviyal</td><td>Mixed vegetables in a coconut and yogurt sauce.</td><td>[Name 2]</td></tr>
+                        <tr><td>Parippu Curry</td><td>Simple lentil curry, usually served first with ghee.</td><td>[Name 3]</td></tr>
+                        <tr><td>Rasam</td><td>Tangy and spicy tamarind soup, aids digestion.</td><td>[Name 4]</td></tr>
+                        <tr><td>Kalan</td><td>Sour curd-based curry with vegetables like plantain and yam.</td><td>[Name 5]</td></tr>
+                        <tr><td>Olan</td><td>Mild coconut milk curry with ash gourd and black-eyed peas.</td><td>[Name 6]</td></tr>
+                        <tr><td>Payasam (Ada Pradhaman)</td><td>Sweet dessert pudding made with rice ada, jaggery, and coconut milk.</td><td>[Name 7]</td></tr>
+                        <tr><td>Upperi (Banana Chips)</td><td>Crispy fried banana chips.</td><td>[Name 8]</td></tr>
+                        <tr><td>Sharkara Varatti</td><td>Jaggery-coated banana chips.</td><td>[Name 9]</td></tr>
+                        <tr><td>Inji Curry</td><td>Ginger curry, a spicy and tangy condiment.</td><td>[Name 10]</td></tr>
+                        <tr><td>Pappadam</td><td>Crispy fried lentil crackers.</td><td>[Name 11]</td></tr>
+                        <tr><td>Pulissery</td><td>Sour buttermilk-based curry with vegetables like cucumber or pumpkin.</td><td>[Name 12]</td></tr>
+                        <tr><td>Koottu Curry</td><td>A thick curry with chickpeas, black chickpeas, yam, and plantain.</td><td>[Name 13]</td></tr>
+                        <tr><td>Thoran</td><td>Stir-fried vegetables (e.g., beans, cabbage) with grated coconut.</td><td>[Name 14]</td></tr>
+                        <tr><td>Erissery</td><td>Pumpkin and lentil curry, a slightly sweet and spicy dish.</td><td>[Name 15]</td></tr>
+                        <tr><td>Moru Curry (Curd Curry)</td><td>A simple, lightly spiced yogurt-based curry.</td><td>[Name 16]</td></tr>
+                        <tr><td>Pickle (Kadumanga / Naranga)</td><td>Spicy mango or lime pickle, adds a tangy kick.</td><td>[Name 17]</td></tr>
+                        <tr><td>Banana</td><td>Small ripe bananas, often eaten with payasam.</td><td>[Name 18]</td></tr>
+                        <tr><td>Salt</td><td>A pinch of salt is traditionally placed on the banana leaf.</td><td>[Name 19]</td></tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 20px;"><em>If you'd like to contribute a dish, please contact [Event Coordinator Name/Email] to add your name to the list!</em></p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TrailWalkers Melbourne. All rights reserved. Celebrating Onam in the Heart of Australia.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.dataset.tab;
+
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button and target content
+                    button.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+
+            // Optional: Smooth scroll to active tab content if navigated by URL hash
+            if (window.location.hash) {
+                const id = window.location.hash.substring(1);
+                const element = document.getElementById(id);
+                if (element) {
+                    // Simulate click on the corresponding tab button
+                    const correspondingButton = document.querySelector(`.tab-button[data-tab="${id}"]`);
+                    if (correspondingButton) {
+                        correspondingButton.click();
+                    }
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            // Simple scroll-based animations for sections
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section, .info-card').forEach(el => {
+                const isTabContent = el.closest('.tab-content');
+                if (!isTabContent || !isTabContent.classList.contains('active')) {
+                    el.style.opacity = 0;
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                    observer.observe(el);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
