@@ -328,6 +328,23 @@
         .sadya-table tr:hover {
             background-color: #f1f1f1;
         }
+        /* Style for the new select dropdowns */
+        .owner-select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: var(--font-open-sans);
+            font-size: 1em;
+            background-color: var(--primary-bg);
+            cursor: pointer;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .owner-select:focus {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 2px rgba(34, 139, 34, 0.2);
+            outline: none;
+        }
         footer {
             background-color: var(--heading-color);
             color: white;
@@ -456,8 +473,8 @@
                 <p>We're thrilled to host our Onam celebration at the spacious Strathaird Family & Community Centre. Below you'll find everything you need to navigate your way to the festivities!</p>
 
                 <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3140.237834789073!2d145.2950587762691!3d-38.03056154868074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad617e4719b6e83%3A0xf0579e56314f170!2sStrathaird%20Family%20%26%20Community%20Centre!5e0!3m2!1sen!2sau!4v1701550000000!5m2!1sen!2sau" 
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3140.237834789073!2d145.2950587762691!3d-38.03056154868074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad617e4719b6e83%3A0xf0579e56314f170!2sStrathaird%20Family%20%26%20Community%20Centre!5e0!3m2!1sen!2sau!4v1701550000000!5m2!1sen!2sau"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <a href="https://www.google.com/maps/dir/?api=1&destination=Strathaird+Family+%26+Community+Centre,+106+Strathaird+Drive,+Narre+Warren+South,+VIC+3805" target="_blank" class="directions-link">Get Directions via Google Maps</a>
@@ -496,25 +513,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Sambar</td><td>A lentil and vegetable stew, a staple of Sadya.</td><td>[Name 1]</td></tr>
-                        <tr><td>Aviyal</td><td>Mixed vegetables in a coconut and yogurt sauce.</td><td>[Name 2]</td></tr>
-                        <tr><td>Parippu Curry</td><td>Simple lentil curry, usually served first with ghee.</td><td>[Name 3]</td></tr>
-                        <tr><td>Rasam</td><td>Tangy and spicy tamarind soup, aids digestion.</td><td>[Name 4]</td></tr>
-                        <tr><td>Kalan</td><td>Sour curd-based curry with vegetables like plantain and yam.</td><td>[Name 5]</td></tr>
-                        <tr><td>Olan</td><td>Mild coconut milk curry with ash gourd and black-eyed peas.</td><td>[Name 6]</td></tr>
-                        <tr><td>Payasam (Ada Pradhaman)</td><td>Sweet dessert pudding made with rice ada, jaggery, and coconut milk.</td><td>[Name 7]</td></tr>
-                        <tr><td>Upperi (Banana Chips)</td><td>Crispy fried banana chips.</td><td>[Name 8]</td></tr>
-                        <tr><td>Sharkara Varatti</td><td>Jaggery-coated banana chips.</td><td>[Name 9]</td></tr>
-                        <tr><td>Inji Curry</td><td>Ginger curry, a spicy and tangy condiment.</td><td>[Name 10]</td></tr>
-                        <tr><td>Pappadam</td><td>Crispy fried lentil crackers.</td><td>[Name 11]</td></tr>
-                        <tr><td>Pulissery</td><td>Sour buttermilk-based curry with vegetables like cucumber or pumpkin.</td><td>[Name 12]</td></tr>
-                        <tr><td>Koottu Curry</td><td>A thick curry with chickpeas, black chickpeas, yam, and plantain.</td><td>[Name 13]</td></tr>
-                        <tr><td>Thoran</td><td>Stir-fried vegetables (e.g., beans, cabbage) with grated coconut.</td><td>[Name 14]</td></tr>
-                        <tr><td>Erissery</td><td>Pumpkin and lentil curry, a slightly sweet and spicy dish.</td><td>[Name 15]</td></tr>
-                        <tr><td>Moru Curry (Curd Curry)</td><td>A simple, lightly spiced yogurt-based curry.</td><td>[Name 16]</td></tr>
-                        <tr><td>Pickle (Kadumanga / Naranga)</td><td>Spicy mango or lime pickle, adds a tangy kick.</td><td>[Name 17]</td></tr>
-                        <tr><td>Banana</td><td>Small ripe bananas, often eaten with payasam.</td><td>[Name 18]</td></tr>
-                        <tr><td>Salt</td><td>A pinch of salt is traditionally placed on the banana leaf.</td><td>[Name 19]</td></tr>
+                        <tr><td>Sambar</td><td>A lentil and vegetable stew, a staple of Sadya.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Aviyal</td><td>Mixed vegetables in a coconut and yogurt sauce.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Parippu Curry</td><td>Simple lentil curry, usually served first with ghee.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Rasam</td><td>Tangy and spicy tamarind soup, aids digestion.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Kalan</td><td>Sour curd-based curry with vegetables like plantain and yam.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Olan</td><td>Mild coconut milk curry with ash gourd and black-eyed peas.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Payasam (Ada Pradhaman)</td><td>Sweet dessert pudding made with rice ada, jaggery, and coconut milk.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Upperi (Banana Chips)</td><td>Crispy fried banana chips.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Sharkara Varatti</td><td>Jaggery-coated banana chips.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Inji Curry</td><td>Ginger curry, a spicy and tangy condiment.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Pappadam</td><td>Crispy fried lentil crackers.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Pulissery</td><td>Sour buttermilk-based curry with vegetables like cucumber or pumpkin.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Koottu Curry</td><td>A thick curry with chickpeas, black chickpeas, yam, and plantain.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Thoran</td><td>Stir-fried vegetables (e.g., beans, cabbage) with grated coconut.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Erissery</td><td>Pumpkin and lentil curry, a slightly sweet and spicy dish.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Moru Curry (Curd Curry)</td><td>A simple, lightly spiced yogurt-based curry.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Pickle (Kadumanga / Naranga)</td><td>Spicy mango or lime pickle, adds a tangy kick.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Banana</td><td>Small ripe bananas, often eaten with payasam.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                        <tr><td>Salt</td><td>A pinch of salt is traditionally placed on the banana leaf.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
                     </tbody>
                 </table>
                 <p style="margin-top: 20px;"><em>If you'd like to contribute a dish, please contact [Event Coordinator Name/Email] to add your name to the list!</em></p>
@@ -587,6 +604,76 @@
                     observer.observe(el);
                 }
             });
+
+            // --- New JavaScript for Sadya Owners dropdowns with color-coding ---
+            const ownerSelects = document.querySelectorAll('.owner-select');
+
+            // Define your pastel color palette for each name
+            const nameColors = {
+                "Anitha": "#FFD1DC", // Pink
+                "Anna": "#B0E0E6",   // Powder Blue
+                "Anu": "#CCEEFF",    // Light Sky Blue
+                "Deepthi": "#D8F8D8", // Mint Green
+                "Diana": "#FAFAD2",  // Light Goldenrod Yellow
+                "Dinu": "#F0E68C",   // Khaki
+                "Josna": "#E6E6FA",  // Lavender
+                "Liji": "#FFDAB9",   // Peach
+                "Manju": "#ADD8E6",  // Light Blue
+                "Parvathy": "#98FB98", // Pale Green
+                "Priya": "#F5DEB3",  // Wheat
+                "Sowmya": "#AFEEEE", // Pale Turquoise
+                "Susan": "#DDA0DD"   // Plum
+            };
+
+            ownerSelects.forEach(select => {
+                // Initialize data-previous-value for each select
+                select.setAttribute('data-previous-value', select.value);
+
+                // Apply initial color based on current value to the entire row
+                const initialTrElement = select.closest('tr');
+                if (select.value === '') {
+                    // This uses the browser's default for the table row
+                    initialTrElement.style.backgroundColor = '';
+                } else {
+                    initialTrElement.style.backgroundColor = nameColors[select.value];
+                }
+
+                select.addEventListener('focus', function() {
+                    // Store the current value when the dropdown is focused
+                    this.setAttribute('data-previous-value', this.value);
+                });
+
+                select.addEventListener('change', function() {
+                    const previousValue = this.getAttribute('data-previous-value');
+                    const newValue = this.value;
+                    const trElement = this.closest('tr'); // Get the parent <tr>
+
+                    let proceedChange = true;
+
+                    // Only show warning if a name was previously selected AND the new value is different
+                    if (previousValue !== '' && newValue !== previousValue) {
+                        const confirmChange = confirm(`Are you sure you want to change the owner from "${previousValue === '' ? '---' : previousValue}" to "${newValue === '' ? '---' : newValue}"?`);
+                        if (!confirmChange) {
+                            // If user cancels, revert to the previous value and stop
+                            this.value = previousValue;
+                            proceedChange = false;
+                        }
+                    }
+
+                    if (proceedChange) {
+                        // Apply color to the entire row
+                        if (newValue === '') {
+                            // If '---' is selected, clear the background to use default row styling
+                            trElement.style.backgroundColor = '';
+                        } else {
+                            trElement.style.backgroundColor = nameColors[newValue];
+                        }
+                        // Update the previous value to the new value after successful change or initial selection
+                        this.setAttribute('data-previous-value', newValue);
+                    }
+                });
+            });
+            // --- End New JavaScript ---
         });
     </script>
 </body>
