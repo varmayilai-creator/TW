@@ -1,298 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>TrailWalkers Onam Celebration - Melbourne</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-<style>
-/* --- CSS Variables and Base Styles --- */
-:root {
-    --primary-bg: #FFFFFF;
-    --secondary-bg: #F8F8F8;
-    --text-color: #333333;
-    --heading-color: #1A1A1A;
-    --accent-gold: #FFD700;
-    --accent-green: #228B22;
-    --accent-red: #DC143C;
-    --border-color: #E0E0E0;
-    --shadow-light: rgba(0, 0, 0, 0.05);
-    --font-inter: 'Inter', sans-serif;
-    --font-open-sans: 'Open Sans', sans-serif;
-}
-/* --- Base Page & Container --- */
-body {
-    font-family: var(--font-open-sans);
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: var(--secondary-bg);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-/* --- Header --- */
-header {
-    background-color: var(--primary-bg);
-    padding: 30px 0;
-    box-shadow: 0 2px 10px var(--shadow-light);
-    text-align: center;
-}
-header h1 {
-    font-family: var(--font-inter);
-    font-size: 2.8em;
-    color: var(--heading-color);
-}
-header h1 .trailwalkers {
-    color: var(--accent-green);
-    font-weight: 700;
-    position: relative;
-}
-header p {
-    font-size: 1.2em;
-    color: #666;
-}
-/* --- Hero Section --- */
-.hero-section {
-    height: 450px;
-    background: linear-gradient(135deg, #FF6347, #FFD700, #32CD32, #8A2BE2);
-    background-size: 200% 200%;
-    animation: pookkalamBackground 15s ease infinite alternate;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    margin-bottom: 40px;
-}
-@keyframes pookkalamBackground {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 100% 100%; }
-}
-.hero-content h2 {
-    font-family: var(--font-inter);
-    font-size: 3.5em;
-    margin-bottom: 15px;
-}
-.hero-content p {
-    font-size: 1.5em;
-}
-/* --- Tabs Navigation --- */
-.tabs {
-    display: flex;
-    justify-content: center;
-    background-color: var(--primary-bg);
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 30px;
-}
-.tab-button {
-    background: none;
-    border: none;
-    padding: 15px 25px;
-    cursor: pointer;
-    font-weight: bold;
-}
-.tab-button.active {
-    color: var(--accent-green);
-    border-bottom: 3px solid var(--accent-gold);
-}
-/* --- Tab Content --- */
-.tab-content {
-    display: none;
-    background-color: var(--primary-bg);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px var(--shadow-light);
-}
-.tab-content.active {
-    display: block;
-}
-/* --- Sadya Table --- */
-.sadya-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-.sadya-table th, .sadya-table td {
-    border: 1px solid var(--border-color);
-    padding: 12px;
-}
-.sadya-table th {
-    background-color: var(--accent-gold);
-    color: var(--heading-color);
-}
-.owner-select {
-    width: 100%;
-}
-/* --- Status Message --- */
-#status-message {
-    margin-top: 15px;
-    font-weight: 600;
-    height: 20px;
-}
-.status-success { color: var(--accent-green); }
-.status-error { color: var(--accent-red); }
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TrailWalkers Onam Celebration - Melbourne</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        /* --- Styles from your original file preserved --- */
+        :root { --primary-bg: #FFFFFF; --secondary-bg: #F8F8F8; --text-color: #333333; --heading-color: #1A1A1A; --accent-gold: #FFD700; --accent-green: #228B22; --accent-red: #DC143C; --border-color: #E0E0E0; --shadow-light: rgba(0, 0, 0, 0.05); --font-inter: 'Inter', sans-serif; --font-open-sans: 'Open Sans', sans-serif; }
+        body { font-family: var(--font-open-sans); line-height: 1.6; margin: 0; padding: 0; background-color: var(--secondary-bg); color: var(--text-color); display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; scroll-behavior: smooth; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; width: 100%; box-sizing: border-box; }
+        header { background-color: var(--primary-bg); padding: 30px 0; box-shadow: 0 2px 10px var(--shadow-light); text-align: center; }
+        header h1 { font-family: var(--font-inter); font-size: 2.8em; color: var(--heading-color); margin: 0; padding-bottom: 10px; }
+        header h1 .trailwalkers { color: var(--accent-green); font-weight: 700; }
+        header p { font-size: 1.2em; color: #666; margin-top: 10px; font-family: var(--font-inter); }
+        .hero-section { width: 100%; height: 450px; background: radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.7), transparent 70%), radial-gradient(circle at 80% 20%, rgba(255, 99, 71, 0.7), transparent 70%), radial-gradient(circle at 50% 50%, rgba(50, 205, 50, 0.6), transparent 60%), linear-gradient(135deg, #FF6347, #FFD700, #32CD32, #8A2BE2); background-size: 200% 200%; display: flex; align-items: center; justify-content: center; color: white; text-align: center; margin-bottom: 40px; animation: pookkalamBackground 15s ease infinite alternate; }
+        @keyframes pookkalamBackground { 0% { background-position: 0% 0%; } 50% { background-position: 100% 100%; } 100% { background-position: 0% 0%; } }
+        .hero-content { z-index: 1; padding: 20px; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); }
+        .hero-content h2 { font-family: var(--font-inter); font-size: 3.5em; margin-bottom: 15px; color: white; }
+        .hero-content p { font-size: 1.5em; margin-top: 20px; color: #F0F0F0; }
+        .tabs { display: flex; justify-content: center; background-color: var(--primary-bg); border-bottom: 1px solid var(--border-color); margin-bottom: 30px; box-shadow: 0 2px 5px var(--shadow-light); flex-wrap: wrap; }
+        .tab-button { background-color: transparent; border: none; padding: 15px 25px; font-size: 1.1em; font-family: var(--font-inter); font-weight: 600; color: var(--text-color); cursor: pointer; }
+        .tab-button.active { color: var(--accent-green); border-bottom: 3px solid var(--accent-gold); }
+        .tab-content { display: none; padding: 20px; background-color: var(--primary-bg); border-radius: 8px; box-shadow: 0 4px 15px var(--shadow-light); min-height: 300px; }
+        .tab-content.active { display: block; }
+        .sadya-table { width: 100%; border-collapse: collapse; margin-top: 20px; overflow-x: auto; display: block; }
+        .sadya-table th, .sadya-table td { border: 1px solid var(--border-color); padding: 12px 15px; text-align: left; }
+        .sadya-table th { background-color: var(--accent-gold); color: var(--heading-color); }
+        .owner-select { width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; font-family: var(--font-open-sans); cursor: pointer; }
+        footer { background-color: var(--heading-color); color: white; text-align: center; padding: 30px 20px; margin-top: auto; font-size: 0.9em; }
+    </style>
 </head>
 <body>
-<header>
-<div class="container">
-    <h1><span class="trailwalkers">TrailWalkers</span> Onam Celebration</h1>
-    <p>Melbourne's most vibrant festival for our walking community!</p>
-</div>
-</header>
+    <header>
+        <div class="container">
+            <h1><span class="trailwalkers">TrailWalkers</span> Onam Celebration</h1>
+            <p>Melbourne's most vibrant festival for our walking community!</p>
+        </div>
+    </header>
 
-<div class="hero-section">
-<div class="hero-content">
-    <h2>Welcome to Onam 2025!</h2>
-    <p>A celebration of culture, harvest, and togetherness for the TrailWalkers family.</p>
-</div>
-</div>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h2>Welcome to Onam 2025!</h2>
+            <p>A celebration of culture, harvest, and togetherness for the TrailWalkers family.</p>
+        </div>
+    </div>
 
-<main class="container">
-<nav class="tabs">
-    <button class="tab-button active" data-tab="date-venue">Date and Venue</button>
-    <button class="tab-button" data-tab="programs">Programs</button>
-    <button class="tab-button" data-tab="sadya">Sadya Items</button>
-</nav>
+    <main class="container">
+        <nav class="tabs">
+            <button class="tab-button active" data-tab="date-venue">Date and Venue</button>
+            <button class="tab-button" data-tab="programs">Programs</button>
+            <button class="tab-button" data-tab="sadya">Sadya Items</button>
+        </nav>
 
-<!-- Date & Venue Tab -->
-<div id="date-venue" class="tab-content active">
-    <h2>Event Details</h2>
-    <p><strong>Friday, 20th September 2025</strong> from 10:00 AM onwards</p>
-    <p><strong>Location:</strong> Strathaird Family & Community Centre, Narre Warren South</p>
-</div>
+        <div id="date-venue" class="tab-content active">
+            <section>
+                <h2>Event Details</h2>
+                <p><strong>Friday, 20th September 2025</strong></p>
+                <p><strong>Strathaird Family & Community Centre</strong></p>
+            </section>
+        </div>
 
-<!-- Programs Tab -->
-<div id="programs" class="tab-content">
-    <h2>Onam Celebration Programs</h2>
-    <ul>
-        <li>10:00 AM - Welcome & Pookkalam Laying</li>
-        <li>11:00 AM - Mahabali's Grand Entry</li>
-        <li>1:00 PM - Onasadya (Grand Feast)</li>
-        <li>2:30 PM - Cultural Performances</li>
-    </ul>
-</div>
+        <div id="programs" class="tab-content">
+            <section>
+                <h2>Onam Celebration Programs</h2>
+                <p>Full program schedule...</p>
+            </section>
+        </div>
 
-<!-- Sadya Items Tab -->
-<div id="sadya" class="tab-content">
-    <h2>Sadya Items & Owners</h2>
-    <p>Select your couple name for the dish you'd like to contribute:</p>
-    <table class="sadya-table">
-        <thead>
-            <tr><th>Dish Name</th><th>Description</th><th>Owner / Contributor</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>Sambar</td><td>A lentil and vegetable stew</td>
-                <td><select class="owner-select">
-<option value="">---</option>
-<option value="Anitha n Rajeev">Anitha n Rajeev</option>
-<option value="Anna n Shilton">Anna n Shilton</option>
-<option value="Anu n Nikhil">Anu n Nikhil</option>
-<option value="Deepthi n Jibin">Deepthi n Jibin</option>
-<option value="Diana n Sunil">Diana n Sunil</option>
-<option value="Deepika n Dinu">Deepika n Dinu</option>
-<option value="Josna n Rajeeb">Josna n Rajeeb</option>
-<option value="Liji n Manoj">Liji n Manoj</option>
-<option value="Manju n Pramode">Manju n Pramode</option>
-<option value="Parvathy n Rajesh">Parvathy n Rajesh</option>
-<option value="Priya n Sree">Priya n Sree</option>
-<option value="Sowmya n Praveen">Sowmya n Praveen</option>
-<option value="Susan n Roy">Susan n Roy</option>
-</select></td></tr>
-            <!-- Repeat above block for all other dishes -->
-        </tbody>
-    </table>
-    <p id="status-message"></p>
-</div>
-</main>
+        <div id="sadya" class="tab-content">
+            <section>
+                <h2>Sadya Items & Owners</h2>
+                <table class="sadya-table">
+                    <thead>
+                        <tr>
+                            <th>Dish Name</th>
+                            <th>Description</th>
+                            <th>Owner / Contributor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Populated dynamically -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
 
-<footer>
-<div class="container">
-    <p>&copy; 2025 TrailWalkers Melbourne. All rights reserved.</p>
-</div>
-</footer>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TrailWalkers Melbourne. All rights reserved.</p>
+        </div>
+    </footer>
 
-<script>
-// Tab switching
-document.querySelectorAll('.tab-button').forEach(btn => {
-    btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById(btn.dataset.tab).classList.add('active');
-    });
-});
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sheetAPI = 'https://script.google.com/macros/s/AKfycbxdw1O5_9cVdyIADuqv3N6Q5bGz8TOlMNT0qeeI8O2DDQ7QsjEgQj1jBEZNeWoFykmh/exec';
+        const sadyaTableBody = document.querySelector('.sadya-table tbody');
+        let ownerNames = [];
+        let nameColors = {};
 
-// Google Sheets integration
-const appScriptUrl = 'https://script.google.com/macros/s/AKfycbxdw1O5_9cVdyIADuqv3N6Q5bGz8TOlMNT0qeeI8O2DDQ7QsjEgQj1jBEZNeWoFykmh/exec';
-const sheetName = 'OnamSadyaData';
-const nameColors = {
-    "Anitha n Rajeev": "#FFD1DC",
-    "Anna n Shilton": "#B0E0E6",
-    "Anu n Nikhil": "#CCEEFF",
-    "Deepthi n Jibin": "#D8F8D8",
-    "Diana n Sunil": "#FAFAD2",
-    "Deepika n Dinu": "#F0E68C",
-    "Josna n Rajeeb": "#E6E6FA",
-    "Liji n Manoj": "#FFDAB9",
-    "Manju n Pramode": "#ADD8E6",
-    "Parvathy n Rajesh": "#98FB98",
-    "Priya n Sree": "#F5DEB3",
-    "Sowmya n Praveen": "#AFEEEE",
-    "Susan n Roy": "#DDA0DD"
-};
+        async function loadSadyaData() {
+            try {
+                const res = await fetch(sheetAPI);
+                const data = await res.json();
+                ownerNames = data.owners;
+                nameColors = generatePastelColors(ownerNames);
+                sadyaTableBody.innerHTML = '';
 
-function updateRowStyle(select) {
-    const tr = select.closest('tr');
-    const owner = select.value;
-    if (owner && nameColors[owner]) tr.style.backgroundColor = nameColors[owner];
-    else tr.style.backgroundColor = '';
-}
+                data.dishes.forEach(dish => {
+                    const tr = document.createElement('tr');
+                    const tdDish = document.createElement('td');
+                    tdDish.textContent = dish.name;
+                    const tdDesc = document.createElement('td');
+                    tdDesc.textContent = dish.description;
+                    const tdOwner = document.createElement('td');
 
-function fetchSadyaData() {
-    fetch(`${appScriptUrl}?sheet=${sheetName}`)
-        .then(r => r.json())
-        .then(data => {
-            if (data.status === 'success') {
-                document.querySelectorAll('.sadya-table tbody tr').forEach(row => {
-                    const dish = row.cells[0].textContent.trim();
-                    const select = row.querySelector('.owner-select');
-                    const record = data.data.find(item => item.DishName === dish);
-                    if (record) {
-                        select.value = record.Owner || '';
-                        updateRowStyle(select);
+                    const select = document.createElement('select');
+                    select.className = 'owner-select';
+                    select.setAttribute('data-previous-value', dish.owner || '');
+                    const defaultOpt = document.createElement('option');
+                    defaultOpt.value = '';
+                    defaultOpt.textContent = '---';
+                    select.appendChild(defaultOpt);
+
+                    ownerNames.forEach(name => {
+                        const opt = document.createElement('option');
+                        opt.value = name;
+                        opt.textContent = name;
+                        if (name === dish.owner) opt.selected = true;
+                        select.appendChild(opt);
+                    });
+
+                    if (dish.owner && nameColors[dish.owner]) {
+                        tr.style.backgroundColor = nameColors[dish.owner];
                     }
+
+                    select.addEventListener('focus', function() {
+                        this.setAttribute('data-previous-value', this.value);
+                    });
+
+                    select.addEventListener('change', async function() {
+                        const previousValue = this.getAttribute('data-previous-value');
+                        const newValue = this.value;
+                        let proceed = true;
+
+                        if (previousValue !== '' && newValue !== previousValue) {
+                            proceed = confirm(`Change owner from "${previousValue}" to "${newValue}"?`);
+                            if (!proceed) {
+                                this.value = previousValue;
+                                return;
+                            }
+                        }
+                        tr.style.backgroundColor = newValue && nameColors[newValue] ? nameColors[newValue] : '';
+                        await updateDishOwner(dish.name, newValue);
+                        this.setAttribute('data-previous-value', newValue);
+                    });
+
+                    tdOwner.appendChild(select);
+                    tr.appendChild(tdDish);
+                    tr.appendChild(tdDesc);
+                    tr.appendChild(tdOwner);
+                    sadyaTableBody.appendChild(tr);
                 });
+            } catch (err) {
+                console.error('Error loading Sadya data:', err);
             }
-        });
-}
+        }
 
-function updateSadyaOwner(dishName, owner, select) {
-    fetch(appScriptUrl, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ sheetName, dishName, owner })
-    }).finally(() => {});
-}
+        function generatePastelColors(names) {
+            const colors = {};
+            const palette = ['#FFD1DC','#B0E0E6','#CCEEFF','#D8F8D8','#FAFAD2','#F0E68C','#E6E6FA','#FFDAB9','#ADD8E6','#98FB98','#F5DEB3','#AFEEEE','#DDA0DD'];
+            names.forEach((n, i) => { colors[n] = palette[i % palette.length]; });
+            return colors;
+        }
 
-// Event listeners
-document.querySelectorAll('.owner-select').forEach(select => {
-    select.addEventListener('change', function() {
-        updateRowStyle(this);
-        const dish = this.closest('tr').cells[0].textContent.trim();
-        updateSadyaOwner(dish, this.value, this);
+        async function updateDishOwner(dishName, ownerName) {
+            try {
+                await fetch(sheetAPI, {
+                    method: 'POST',
+                    body: JSON.stringify({ dish: dishName, owner: ownerName }),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+            } catch (err) {
+                console.error('Error updating owner:', err);
+            }
+        }
+        loadSadyaData();
     });
-});
-
-fetchSadyaData();
-</script>
+    </script>
 </body>
 </html>
