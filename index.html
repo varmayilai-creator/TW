@@ -59,47 +59,23 @@
         header h1 .trailwalkers {
             color: var(--accent-green);
             font-weight: 700;
-            position: relative;
-            display: inline-block;
-            animation: fadeInScale 1s ease-out forwards;
-        }
-        header h1 .trailwalkers::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: -5px;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 4px;
-            background-color: var(--accent-gold);
-            border-radius: 2px;
-            opacity: 0;
-            animation: slideInUnderline 1s ease-out 0.5s forwards;
         }
         header p {
             font-size: 1.2em;
             color: #666;
             margin-top: 10px;
             font-family: var(--font-inter);
-            opacity: 0;
-            animation: fadeIn 1s ease-out 0.8s forwards;
         }
-        /* Hero section with attractive graphics inspired by Pookkalam */
         .hero-section {
             width: 100%;
-            height: 450px;
-            background:
-                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.7), transparent 70%),
-                radial-gradient(circle at 80% 20%, rgba(255, 99, 71, 0.7), transparent 70%),
-                radial-gradient(circle at 50% 50%, rgba(50, 205, 50, 0.6), transparent 60%),
-                linear-gradient(135deg, #FF6347, #FFD700, #32CD32, #8A2BE2);
+            height: 350px;
+            background: linear-gradient(135deg, #FF6347, #FFD700, #32CD32);
             background-size: 200% 200%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
-            overflow: hidden;
             position: relative;
             margin-bottom: 40px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -113,35 +89,18 @@
         .hero-content {
             z-index: 1;
             padding: 20px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
         .hero-content h2 {
             font-family: var(--font-inter);
             font-size: 3.5em;
             margin-bottom: 15px;
             color: white;
-            border-bottom: none;
-            padding-bottom: 0;
-            position: relative;
-            animation: fadeInDown 1s ease-out forwards;
-        }
-        .hero-content h2::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -10px;
-            width: 80px;
-            height: 5px;
-            background-color: var(--accent-gold);
-            border-radius: 3px;
-            animation: slideInUnderline 1s ease-out 0.8s forwards;
         }
         .hero-content p {
             font-size: 1.5em;
             margin-top: 20px;
             color: #F0F0F0;
-            animation: fadeInUp 1s ease-out 0.3s forwards;
         }
         .tabs {
             display: flex;
@@ -161,35 +120,15 @@
             font-weight: 600;
             color: var(--text-color);
             cursor: pointer;
-            transition: color 0.3s ease, background-color 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            flex-grow: 1;
-            text-align: center;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            border-bottom: 3px solid transparent;
         }
         .tab-button:hover {
             color: var(--accent-green);
-            background-color: var(--secondary-bg);
         }
         .tab-button.active {
             color: var(--accent-green);
             border-bottom: 3px solid var(--accent-gold);
-        }
-        .tab-button::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--accent-green);
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease-out;
-        }
-        .tab-button:hover::before {
-            transform: scaleX(1);
-            transform-origin: bottom left;
         }
         .tab-content {
             display: none;
@@ -203,9 +142,7 @@
         .tab-content.active {
             display: block;
         }
-        section {
-            margin-bottom: 40px;
-        }
+        section { margin-bottom: 40px; }
         h2 {
             font-family: var(--font-inter);
             font-size: 2em;
@@ -232,25 +169,6 @@
             margin-top: 30px;
             margin-bottom: 15px;
         }
-        p {
-            margin-bottom: 15px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            background-color: var(--secondary-bg);
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 5px solid var(--accent-green);
-            box-shadow: 0 1px 3px var(--shadow-light);
-            transition: transform 0.2s ease;
-        }
-        ul li:hover {
-            transform: translateX(5px);
-        }
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -263,15 +181,6 @@
             box-shadow: 0 2px 8px var(--shadow-light);
             border-top: 5px solid var(--accent-red);
         }
-        .info-card h3 {
-            color: var(--heading-color);
-            margin-top: 0;
-            border-bottom: 2px dashed var(--border-color);
-            padding-bottom: 10px;
-        }
-        .info-card p {
-            margin-bottom: 0;
-        }
         .map-container {
             position: relative;
             width: 100%;
@@ -279,12 +188,6 @@
             margin-top: 20px;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 10px var(--shadow-light);
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
         }
         .directions-link {
             display: inline-block;
@@ -295,139 +198,127 @@
             text-decoration: none;
             margin-top: 20px;
             font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        .directions-link:hover {
-            background-color: #3a7d44;
-            transform: translateY(-2px);
         }
         .sadya-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            overflow-x: auto;
-            display: block;
         }
         .sadya-table th, .sadya-table td {
             border: 1px solid var(--border-color);
             padding: 12px 15px;
             text-align: left;
+            vertical-align: middle;
         }
         .sadya-table th {
             background-color: var(--accent-gold);
             color: var(--heading-color);
             font-family: var(--font-inter);
-            font-weight: 700;
-            position: sticky;
-            top: 0;
         }
-        .sadya-table tr:nth-child(even) {
-            background-color: var(--secondary-bg);
-        }
-        .sadya-table tr:hover {
-            background-color: #f1f1f1;
-        }
-        /* Style for the new select dropdowns */
         .owner-select {
             width: 100%;
             padding: 8px;
-            border: 1px solid var(--border-color);
             border-radius: 4px;
-            font-family: var(--font-open-sans);
             font-size: 1em;
-            background-color: var(--primary-bg);
             cursor: pointer;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
-        .owner-select:focus {
-            border-color: var(--accent-green);
-            box-shadow: 0 0 0 2px rgba(34, 139, 34, 0.2);
-            outline: none;
+        .owner-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+            color: #333;
         }
+        .remove-owner {
+            margin-left: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #555;
+        }
+        /* Loader styles */
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--accent-green);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 50px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Summary Dashboard */
+        #sadya-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            background-color: var(--secondary-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        #sadya-summary h3 {
+            margin-top: 0;
+            color: var(--accent-green);
+        }
+        #sadya-summary ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Modal Dialog */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .modal-buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .modal-confirm {
+            background-color: var(--accent-green);
+            color: white;
+        }
+
         footer {
             background-color: var(--heading-color);
             color: white;
             text-align: center;
             padding: 30px 20px;
             margin-top: auto;
-            font-size: 0.9em;
-            font-family: var(--font-inter);
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes slideInUnderline {
-            from { width: 0; opacity: 0; }
-            to { width: 80%; opacity: 1; }
-        }
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-            .hero-section {
-                height: 350px;
-            }
-            .hero-content h2 {
-                font-size: 2.5em;
-            }
-            .hero-content p {
-                font-size: 1.2em;
-            }
-            .tab-button {
-                flex-basis: 100%;
-                font-size: 1em;
-                padding: 12px 15px;
-                border-bottom: 1px solid var(--border-color);
-            }
-            .tab-button:last-child {
-                border-bottom: none;
-            }
-            .tabs {
-                flex-direction: column;
-            }
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            .sadya-table th, .sadya-table td {
-                padding: 10px;
-                font-size: 0.9em;
-            }
-        }
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-            header p {
-                font-size: 1em;
-            }
-            .hero-section {
-                height: 300px;
-            }
-            .hero-content h2 {
-                font-size: 1.8em;
-            }
-            .hero-content p {
-                font-size: 1em;
-            }
-            .tab-button {
-                font-size: 0.9em;
-                padding: 10px 12px;
-            }
+            header h1 { font-size: 2em; }
+            .hero-content h2 { font-size: 2.5em; }
+            .tab-button { flex-basis: 50%; }
         }
     </style>
 </head>
@@ -442,7 +333,7 @@
     <div class="hero-section">
         <div class="hero-content">
             <h2>Welcome to Onam 2025!</h2>
-            <p>A celebration of culture, harvest, and togetherness for the TrailWalkers family.</p>
+            <p>A celebration of culture, harvest, and togetherness.</p>
         </div>
     </div>
 
@@ -468,25 +359,15 @@
                         <p>106 Strathaird Drive, Narre Warren South, VIC 3805</p>
                     </div>
                 </div>
-
-                <h3>Getting There</h3>
-                <p>We're thrilled to host our Onam celebration at the spacious Strathaird Family & Community Centre. Below you'll find everything you need to navigate your way to the festivities!</p>
-
                 <div class="map-container">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3140.237834789073!2d145.2950587762691!3d-38.03056154868074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad617e4719b6e83%3A0xf0579e56314f170!2sStrathaird%20Family%20%26%20Community%20Centre!5e0!3m2!1sen!2sau!4v1701550000000!5m2!1sen!2sau"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3140.237834789073!2d145.2950587762691!3d-38.03056154868074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad617e4719b6e83%3A0xf0579e56314f170!2sStrathaird%20Family%20%26%20Community%20Centre!5e0!3m2!1sen!2sau!4v1701550000000!5m2!1sen!2sau" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=Strathaird+Family+%26+Community+Centre,+106+Strathaird+Drive,+Narre+Warren+South,+VIC+3805" target="_blank" class="directions-link">Get Directions via Google Maps</a>
-
-                <h3>Travel Information</h3>
-                <p><strong>Public Transport:</strong> The centre is accessible via bus routes from Narre Warren and Berwick train stations. Please check PTV for the most up-to-date routes and timetables.</p>
-                <p><strong>Parking:</strong> Ample free parking is available on-site at the Strathaird Family & Community Centre car park.</p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Strathaird+Family+%26+Community+Centre,+106+Strathaird+Drive,+Narre+Warren+South,+VIC+3805" target="_blank" class="directions-link">Get Directions</a>
             </section>
         </div>
 
         <div id="programs" class="tab-content">
-            <section>
+             <section>
                 <h2>Onam Celebration Programs</h2>
                 <ul>
                     <li><strong>10:00 AM - Welcome & Pookkalam Laying:</strong> Join us as we collaboratively create a vibrant Onam Pookkalam (floral carpet), symbolising welcome and prosperity.</li>
@@ -502,8 +383,9 @@
 
         <div id="sadya" class="tab-content">
             <section>
-                <h2>Sadya Items & Owners</h2>
-                <p>The Onasadya is the heart of our celebration! It's a collaborative feast, and we appreciate everyone contributing their delicious dishes. Please find the list of items and who is bringing them below. If you're contributing, please ensure your name is listed!</p>
+                <h2>Sadya Contributions Dashboard</h2>
+                <p>This is a live dashboard. Select your name from a dropdown to claim a dish. The list updates automatically for everyone.</p>
+                <div id="sadya-summary"></div>
                 <table class="sadya-table">
                     <thead>
                         <tr>
@@ -512,168 +394,242 @@
                             <th>Owner / Contributor</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr><td>Sambar</td><td>A lentil and vegetable stew, a staple of Sadya.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Aviyal</td><td>Mixed vegetables in a coconut and yogurt sauce.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Parippu Curry</td><td>Simple lentil curry, usually served first with ghee.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Rasam</td><td>Tangy and spicy tamarind soup, aids digestion.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Kalan</td><td>Sour curd-based curry with vegetables like plantain and yam.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Olan</td><td>Mild coconut milk curry with ash gourd and black-eyed peas.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Payasam (Ada Pradhaman)</td><td>Sweet dessert pudding made with rice ada, jaggery, and coconut milk.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Upperi (Banana Chips)</td><td>Crispy fried banana chips.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Sharkara Varatti</td><td>Jaggery-coated banana chips.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Inji Curry</td><td>Ginger curry, a spicy and tangy condiment.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Pappadam</td><td>Crispy fried lentil crackers.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Pulissery</td><td>Sour buttermilk-based curry with vegetables like cucumber or pumpkin.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Koottu Curry</td><td>A thick curry with chickpeas, black chickpeas, yam, and plantain.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Thoran</td><td>Stir-fried vegetables (e.g., beans, cabbage) with grated coconut.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Erissery</td><td>Pumpkin and lentil curry, a slightly sweet and spicy dish.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Moru Curry (Curd Curry)</td><td>A simple, lightly spiced yogurt-based curry.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Pickle (Kadumanga / Naranga)</td><td>Spicy mango or lime pickle, adds a tangy kick.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Banana</td><td>Small ripe bananas, often eaten with payasam.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
-                        <tr><td>Salt</td><td>A pinch of salt is traditionally placed on the banana leaf.</td><td><select class="owner-select" data-previous-value=""><option value="">---</option><option value="Anitha">Anitha</option><option value="Anna">Anna</option><option value="Anu">Anu</option><option value="Deepthi">Deepthi</option><option value="Diana">Diana</option><option value="Dinu">Dinu</option><option value="Josna">Josna</option><option value="Liji">Liji</option><option value="Manju">Manju</option><option value="Parvathy">Parvathy</option><option value="Priya">Priya</option><option value="Sowmya">Sowmya</option><option value="Susan">Susan</option></select></td></tr>
+                    <tbody id="sadya-tbody">
+                        <!-- Rows will be dynamically inserted here -->
                     </tbody>
                 </table>
-                <p style="margin-top: 20px;"><em>If you'd like to contribute a dish, please contact [Event Coordinator Name/Email] to add your name to the list!</em></p>
+                 <div id="loader-container" style="text-align: center; padding: 40px;">
+                    <div class="loader"></div>
+                    <p>Loading live data from Google Sheet...</p>
+                </div>
             </section>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 TrailWalkers Melbourne. All rights reserved. Celebrating Onam in the Heart of Australia.</p>
+            <p>&copy; 2025 TrailWalkers Melbourne. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Modal Dialog HTML -->
+    <div id="confirmation-modal" class="modal-overlay">
+        <div class="modal-content">
+            <p id="modal-text">Are you sure?</p>
+            <div id="modal-spinner" class="loader" style="display: none; margin: 20px auto;"></div>
+            <div class="modal-buttons">
+                <button id="modal-cancel">Cancel</button>
+                <button id="modal-confirm" class="modal-confirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- CORE APP STATE AND CONFIG ---
+            const webAppUrl = 'https://script.google.com/macros/s/AKfycbzWwUd_UFK6MVCTuRKArGEnb4GzSbx3041yhN_CKLaq87EDuHRPtljUBATkyDCcu0xP/exec';
+            const dishData = [
+                { name: "Sambar", description: "A lentil and vegetable stew, a staple of Sadya." },
+                { name: "Aviyal", description: "Mixed vegetables in a coconut and yogurt sauce." },
+                { name: "Parippu Curry", description: "Simple lentil curry, usually served first with ghee." },
+                { name: "Rasam", description: "Tangy and spicy tamarind soup, aids digestion." },
+                { name: "Kalan", description: "Sour curd-based curry with vegetables like plantain and yam." },
+                { name: "Olan", description: "Mild coconut milk curry with ash gourd and black-eyed peas." },
+                { name: "Payasam (Ada Pradhaman)", description: "Sweet dessert pudding with rice ada, jaggery, and coconut milk." },
+                { name: "Upperi (Banana Chips)", description: "Crispy fried banana chips." },
+                { name: "Sharkara Varatti", description: "Jaggery-coated banana chips." },
+                { name: "Inji Curry", description: "Ginger curry, a spicy and tangy condiment." },
+                { name: "Pappadam", description: "Crispy fried lentil crackers." },
+                { name: "Pulissery", description: "Sour buttermilk-based curry with vegetables." },
+                { name: "Koottu Curry", description: "A thick curry with chickpeas, yam, and plantain." },
+                { name: "Thoran", description: "Stir-fried vegetables (e.g., beans) with grated coconut." },
+                { name: "Erissery", description: "Pumpkin and lentil curry, a slightly sweet and spicy dish." },
+                { name: "Moru Curry (Curd Curry)", description: "A simple, lightly spiced yogurt-based curry." },
+                { name: "Pickle (Kadumanga / Naranga)", description: "Spicy mango or lime pickle, adds a tangy kick." },
+                { name: "Banana", description: "Small ripe bananas, often eaten with payasam." },
+                { name: "Salt", description: "A pinch of salt is traditionally placed on the banana leaf." }
+            ];
+            const contributors = ["Anitha", "Anna", "Anu", "Deepthi", "Diana", "Dinu", "Josna", "Liji", "Manju", "Parvathy", "Priya", "Sowmya", "Susan"];
+            const nameColors = {
+                "Anitha": "#FFD1DC", "Anna": "#B0E0E6", "Anu": "#CCEEFF", "Deepthi": "#D8F8D8", "Diana": "#FAFAD2", "Dinu": "#F0E68C", "Josna": "#E6E6FA", "Liji": "#FFDAB9", "Manju": "#ADD8E6", "Parvathy": "#98FB98", "Priya": "#F5DEB3", "Sowmya": "#AFEEEE", "Susan": "#DDA0DD"
+            };
+            let sadyaState = []; // To hold the live data from the sheet
+
+            // --- UI ELEMENTS ---
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabContents = document.querySelectorAll('.tab-content');
+            const sadyaTbody = document.getElementById('sadya-tbody');
+            const loaderContainer = document.getElementById('loader-container');
+            const summaryContainer = document.getElementById('sadya-summary');
+            const modal = document.getElementById('confirmation-modal');
+            const modalText = document.getElementById('modal-text');
+            const modalCancel = document.getElementById('modal-cancel');
+            const modalConfirm = document.getElementById('modal-confirm');
+            const modalSpinner = document.getElementById('modal-spinner');
 
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const targetTab = button.dataset.tab;
+            // --- DATA FETCHING AND RENDERING ---
+            async function fetchData() {
+                loaderContainer.style.display = 'block';
+                sadyaTbody.innerHTML = '';
+                summaryContainer.innerHTML = '';
+                try {
+                    const response = await fetch(webAppUrl);
+                    if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}`);
+                    const result = await response.json();
+                    if (result.status !== 'success') throw new Error(`API Error: ${result.message}`);
+                    
+                    // Convert array of arrays to object for easier lookup
+                    const ownerMap = result.data.reduce((map, [dish, owner]) => {
+                        map[dish] = owner;
+                        return map;
+                    }, {});
 
-                    // Remove active class from all buttons and contents
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
+                    sadyaState = dishData.map(d => ({ ...d, owner: ownerMap[d.name] || '' }));
+                    
+                    renderTable();
+                    renderSummary();
 
-                    // Add active class to clicked button and target content
-                    button.classList.add('active');
-                    document.getElementById(targetTab).classList.add('active');
-                });
-            });
+                } catch (error) {
+                    sadyaTbody.innerHTML = `<tr><td colspan="3" style="color: red; text-align: center;">Error loading data: ${error.message}. Please check the browser console and Google Sheet setup.</td></tr>`;
+                } finally {
+                    loaderContainer.style.display = 'none';
+                }
+            }
+            
+            function renderTable() {
+                sadyaTbody.innerHTML = '';
+                const assignedOwners = sadyaState.map(item => item.owner).filter(Boolean);
 
-            // Optional: Smooth scroll to active tab content if navigated by URL hash
-            if (window.location.hash) {
-                const id = window.location.hash.substring(1);
-                const element = document.getElementById(id);
-                if (element) {
-                    // Simulate click on the corresponding tab button
-                    const correspondingButton = document.querySelector(`.tab-button[data-tab="${id}"]`);
-                    if (correspondingButton) {
-                        correspondingButton.click();
+                sadyaState.forEach(item => {
+                    const tr = document.createElement('tr');
+                    
+                    const ownerCell = document.createElement('td');
+                    if (item.owner) {
+                        const tag = document.createElement('span');
+                        tag.className = 'owner-tag';
+                        tag.textContent = item.owner;
+                        tag.style.backgroundColor = nameColors[item.owner] || '#E0E0E0';
+                        
+                        const removeBtn = document.createElement('span');
+                        removeBtn.className = 'remove-owner';
+                        removeBtn.innerHTML = '&times;';
+                        removeBtn.onclick = () => handleOwnerChange(item.name, '', item.owner);
+                        tag.appendChild(removeBtn);
+                        ownerCell.appendChild(tag);
+                    } else {
+                        const select = document.createElement('select');
+                        select.className = 'owner-select';
+                        select.innerHTML = `<option value="">--- Claim this dish ---</option>` + 
+                            contributors.map(c => `<option value="${c}" ${assignedOwners.includes(c) ? 'disabled' : ''}>${c}</option>`).join('');
+                        select.onchange = (e) => handleOwnerChange(item.name, e.target.value);
+                        ownerCell.appendChild(select);
                     }
-                    element.scrollIntoView({ behavior: 'smooth' });
+
+                    tr.innerHTML = `<td>${item.name}</td><td>${item.description}</td>`;
+                    tr.appendChild(ownerCell);
+                    sadyaTbody.appendChild(tr);
+                });
+            }
+
+            function renderSummary() {
+                summaryContainer.innerHTML = '';
+                const assigned = sadyaState.filter(item => item.owner);
+                const unassigned = sadyaState.filter(item => !item.owner);
+
+                const contributionsByUser = assigned.reduce((acc, item) => {
+                    acc[item.owner] = (acc[item.owner] || 0) + 1;
+                    return acc;
+                }, {});
+
+                let summaryHTML = '<div><h3>Contributions</h3><ul>';
+                Object.entries(contributionsByUser).forEach(([owner, count]) => {
+                    summaryHTML += `<li><strong>${owner}:</strong> ${count} dish(es)</li>`;
+                });
+                summaryHTML += '</ul></div>';
+
+                summaryHTML += '<div><h3>Unassigned Items</h3><ul>';
+                unassigned.forEach(item => {
+                    summaryHTML += `<li>${item.name}</li>`;
+                });
+                if (unassigned.length === 0) {
+                     summaryHTML += `<li>All items have been claimed! Great work!</li>`;
+                }
+                summaryHTML += '</ul></div>';
+                summaryContainer.innerHTML = summaryHTML;
+            }
+
+            // --- EVENT HANDLING AND ACTIONS ---
+            function handleOwnerChange(dishName, newOwner, oldOwner = '') {
+                const action = newOwner ? `claim "${dishName}" for ${newOwner}` : `remove ${oldOwner} from "${dishName}"`;
+                showConfirmation(`Are you sure you want to ${action}?`, () => {
+                    updateOwner(dishName, newOwner);
+                });
+            }
+            
+            async function updateOwner(dish, owner) {
+                showModalSpinner(true);
+                try {
+                    const response = await fetch(webAppUrl, {
+                        method: 'POST',
+                        mode: 'cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ dish, owner })
+                    });
+                     const result = await response.json();
+                    if (result.status !== 'success') throw new Error(result.message);
+                    await fetchData(); // Refresh data on success
+                } catch (error) {
+                    alert(`Error updating sheet: ${error.message}`);
+                } finally {
+                    hideConfirmation();
                 }
             }
 
-            // Simple scroll-based animations for sections
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
+            // --- MODAL DIALOG LOGIC ---
+            let onConfirmCallback = null;
+            function showConfirmation(text, onConfirm) {
+                modalText.textContent = text;
+                onConfirmCallback = onConfirm;
+                modal.style.display = 'flex';
+                showModalSpinner(false);
+            }
+
+            function hideConfirmation() {
+                modal.style.display = 'none';
+                onConfirmCallback = null;
+            }
+            
+            function showModalSpinner(show) {
+                modalSpinner.style.display = show ? 'block' : 'none';
+                modalConfirm.style.display = show ? 'none' : 'inline-block';
+                modalCancel.style.display = show ? 'none' : 'inline-block';
+            }
+
+            modalCancel.onclick = hideConfirmation;
+            modalConfirm.onclick = () => {
+                if (onConfirmCallback) onConfirmCallback();
             };
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('section, .info-card').forEach(el => {
-                const isTabContent = el.closest('.tab-content');
-                if (!isTabContent || !isTabContent.classList.contains('active')) {
-                    el.style.opacity = 0;
-                    el.style.transform = 'translateY(20px)';
-                    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-                    observer.observe(el);
-                }
-            });
-
-            // --- New JavaScript for Sadya Owners dropdowns with color-coding ---
-            const ownerSelects = document.querySelectorAll('.owner-select');
-
-            // Define your pastel color palette for each name
-            const nameColors = {
-                "Anitha": "#FFD1DC", // Pink
-                "Anna": "#B0E0E6",   // Powder Blue
-                "Anu": "#CCEEFF",    // Light Sky Blue
-                "Deepthi": "#D8F8D8", // Mint Green
-                "Diana": "#FAFAD2",  // Light Goldenrod Yellow
-                "Dinu": "#F0E68C",   // Khaki
-                "Josna": "#E6E6FA",  // Lavender
-                "Liji": "#FFDAB9",   // Peach
-                "Manju": "#ADD8E6",  // Light Blue
-                "Parvathy": "#98FB98", // Pale Green
-                "Priya": "#F5DEB3",  // Wheat
-                "Sowmya": "#AFEEEE", // Pale Turquoise
-                "Susan": "#DDA0DD"   // Plum
-            };
-
-            ownerSelects.forEach(select => {
-                // Initialize data-previous-value for each select
-                select.setAttribute('data-previous-value', select.value);
-
-                // Apply initial color based on current value to the entire row
-                const initialTrElement = select.closest('tr');
-                if (select.value === '') {
-                    // This uses the browser's default for the table row
-                    initialTrElement.style.backgroundColor = '';
-                } else {
-                    initialTrElement.style.backgroundColor = nameColors[select.value];
-                }
-
-                select.addEventListener('focus', function() {
-                    // Store the current value when the dropdown is focused
-                    this.setAttribute('data-previous-value', this.value);
-                });
-
-                select.addEventListener('change', function() {
-                    const previousValue = this.getAttribute('data-previous-value');
-                    const newValue = this.value;
-                    const trElement = this.closest('tr'); // Get the parent <tr>
-
-                    let proceedChange = true;
-
-                    // Only show warning if a name was previously selected AND the new value is different
-                    if (previousValue !== '' && newValue !== previousValue) {
-                        const confirmChange = confirm(`Are you sure you want to change the owner from "${previousValue === '' ? '---' : previousValue}" to "${newValue === '' ? '---' : newValue}"?`);
-                        if (!confirmChange) {
-                            // If user cancels, revert to the previous value and stop
-                            this.value = previousValue;
-                            proceedChange = false;
-                        }
-                    }
-
-                    if (proceedChange) {
-                        // Apply color to the entire row
-                        if (newValue === '') {
-                            // If '---' is selected, clear the background to use default row styling
-                            trElement.style.backgroundColor = '';
-                        } else {
-                            trElement.style.backgroundColor = nameColors[newValue];
-                        }
-                        // Update the previous value to the new value after successful change or initial selection
-                        this.setAttribute('data-previous-value', newValue);
+            // --- TAB NAVIGATION ---
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.dataset.tab;
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    button.classList.add('active');
+                    const activeContent = document.getElementById(targetTab);
+                    activeContent.classList.add('active');
+                    // Fetch data only when Sadya tab is clicked for the first time
+                    if (targetTab === 'sadya' && sadyaState.length === 0) {
+                        fetchData();
                     }
                 });
             });
-            // --- End New JavaScript ---
+
+            // Auto-open Sadya tab if hash is present
+            if (window.location.hash === '#sadya') {
+                 document.querySelector('.tab-button[data-tab="sadya"]').click();
+            }
         });
     </script>
 </body>
